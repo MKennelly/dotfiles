@@ -3,13 +3,13 @@
 	SAVEHIST=1000 
 	setopt inc_append_history # To save every command before it is executed 
 	setopt share_history # setopt inc_append_history
+	KEYTIMEOUT=1
 
 # Aliases
 	alias v="vim -p"
 	mkdir -p /tmp/log
 	
-	# This is currently causing problems (fails when you run it anywhere that isn't a git project's root directory)
-	# alias vs="v `git status --porcelain | sed -ne 's/^ M //p'`"
+	alias ..="cd .. && ls"
 
 # Settings
 	export VISUAL=vim
@@ -36,7 +36,7 @@ source ~/dotfiles/zsh/plugins/fixls.zsh
 		ls;
 	}
 	alias cd="c"
-
+	
 # For vim mappings: 
 	stty -ixon
 

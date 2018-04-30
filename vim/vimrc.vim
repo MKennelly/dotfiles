@@ -8,6 +8,8 @@
 	set relativenumber 
 	set number
 
+	set timeoutlen=1000 ttimeoutlen=0
+
 	set cursorline
 	hi Cursor ctermfg=White ctermbg=Yellow cterm=bold guifg=white guibg=yellow gui=bold
 
@@ -15,6 +17,7 @@
 	nnoremap <C-l> :nohl<CR><C-l>:echo "Search Cleared"<CR>
 	nnoremap <C-c> :set norelativenumber<CR>:set nonumber<CR>:echo "Line numbers turned off."<CR>
 	nnoremap <C-n> :set relativenumber<CR>:set number<CR>:echo "Line numbers turned on."<CR>
+	nnoremap <leader><space> :nohl<CR>
 
 	nnoremap n nzzzv
 	nnoremap N Nzzzv
@@ -83,6 +86,11 @@
 	nnoremap <leader>t :tabnew<CR>:Ex<CR>
 	nnoremap <leader>v :vsplit<CR>:w<CR>:Ex<CR>
 	nnoremap <leader>s :split<CR>:w<CR>:Ex<CR>
+	nnoremap <leader>h <C-w>h
+	nnoremap <leader>l <C-w>l
+	nnoremap <leader>j <C-w>j
+	nnoremap <leader>k <C-w>k
+	nnoremap <leader>n <C-w>w
 
 " Return to the same line you left off at
 	augroup line_return
@@ -92,8 +100,4 @@
 			\	execute 'normal! g`"zvzz' |
 			\ endif
 	augroup END
-
-" Future stuff
-	"Swap line
-	"Insert blank below and above
 

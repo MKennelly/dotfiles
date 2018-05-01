@@ -4,13 +4,13 @@
 	setopt inc_append_history # To save every command before it is executed 
 	setopt share_history # setopt inc_append_history
 	KEYTIMEOUT=1
+	unsetopt PROMPT_SP
+    export TERM=xterm-256color
 
 # Aliases
 	alias v="vim -p"
 	mkdir -p /tmp/log
 	
-	alias ..="cd .. && ls"
-
 # Settings
 	export VISUAL=vim
 

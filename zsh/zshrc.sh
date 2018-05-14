@@ -10,6 +10,7 @@
 # Aliases
 	alias v="vim -p"
 	mkdir -p /tmp/log
+	alias st='open -a Sourcetree ./'
 	
 # Settings
 	export VISUAL=vim

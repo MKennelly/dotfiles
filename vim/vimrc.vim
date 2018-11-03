@@ -169,7 +169,7 @@ Plug 'mattn/emmet-vim'
 " Scratch files
 Plug 'duff/vim-scratch'
 " JS Imports
-Plug 'galooshi/vim-import-js', { 'do': 'npm install -g import-js' }
+Plug 'galooshi/vim-import-js', { 'do': 'sudo npm install -g import-js' }
 call plug#end()
 
 " YouCompleteMe

@@ -8,11 +8,14 @@ set shiftwidth=4
 set dir=/tmp/
 set smarttab
 set laststatus=2	" always show status line
+set ttyfast
+set lazyredraw
 filetype plugin indent on
+set spelllang=en_ca
 
 autocmd FileType javascript,html,css,scss setlocal shiftwidth=2 tabstop=2 expandtab softtabstop=0 " 2 tab spacing for web dev
 
-" Triger `autoread` when files changes on disk
+" Trigger `autoread` when files changes on disk
 " https://unix.stackexchange.com/questions/149209/refresh-changed-content-of-file-opened-in-vim/383044#383044
 autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * if mode() != 'c' | checktime | endif
 " Notification after file change
@@ -33,6 +36,7 @@ set showcmd			" Show commands in bottom bar
 set cursorline 		" Highlight current line
 hi Cursor ctermfg=White ctermbg=Yellow cterm=bold guifg=white guibg=yellow gui=bold
 set wildmenu		" visual autocomplete for command menu
+set wildmode=longest:full,full
 set lazyredraw		" redraw only when we need to
 set showmatch		" highlight matching [{()}]
 
@@ -101,14 +105,17 @@ nnoremap <leader><tab> :set list!<cr>
 	nnoremap <leader>k <C-w>k
 	nnoremap <leader>K <C-w>K
 	nnoremap <leader>n <C-w>w
-	" toggle NerdTree
-	nnoremap <leader>ff :NERDTreeToggle<CR>
-	" toggle gundo
-	nnoremap <leader>u :GundoToggle<CR>
-	" open ag.vim
-	nnoremap <leader>a :tabnew<CR>:Ack<space>
 	" Replace
 	nnoremap <leader>r :%s///g<left><left><left>
+	" Spell checking
+	nnoremap <leader>zz :set spell<CR>
+	nnoremap <leader>zn :set nospell<CR>
+	" toggle NerdTree
+	nnoremap <leader>ff :NERDTreeToggle<CR>
+	" toggle undotree
+	nnoremap <leader>u :UndotreeToggle<CR>
+	" open ag.vim
+	nnoremap <leader>a :tabnew<CR>:Ack<space>
 	" ImportJS
 	nnoremap <leader>m :ImportJSWord<CR>
 
@@ -146,7 +153,7 @@ Plug 'mileszs/ack.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'styled-components/vim-styled-components'
 " Super undo
-Plug 'sjl/gundo.vim'
+Plug 'mbbill/undotree'
 " Git/Linting
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
@@ -159,7 +166,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'vim-scripts/tComment'
 " Show colours in code
 Plug 'ap/vim-css-color'
-"AutoComplete/Snippets
+" AutoComplete/Snippets
 Plug 'Valloric/YouCompleteMe'
 Plug 'SirVer/ultisnips'
 " supertab makes tab work with autocomplete and ultisnips
@@ -212,6 +219,13 @@ let g:ctrlp_custom_ignore = {
 \ 'dir':  '\.git$\|\.yardoc\|node_modules\|log\|tmp$',
 \ 'file': '\.so$\|\.dat$|\.DS_Store$'
 \ }
+
+" UndoTree
+if has("persistent_undo")
+  set undodir=~/.undodir/
+  set undofile
+endif
+let g:undotree_SetFocusWhenToggle = 1
 
 " ALE
 let g:ale_fixers = {

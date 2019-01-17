@@ -13,7 +13,7 @@ set lazyredraw
 filetype plugin indent on
 set spelllang=en_ca
 
-autocmd FileType javascript,html,css,scss setlocal shiftwidth=2 tabstop=2 expandtab softtabstop=0 " 2 tab spacing for web dev
+autocmd FileType javascript,html,css,scss,json setlocal shiftwidth=2 tabstop=2 expandtab softtabstop=0 " 2 tab spacing for web dev
 
 " Trigger `autoread` when files changes on disk
 " https://unix.stackexchange.com/questions/149209/refresh-changed-content-of-file-opened-in-vim/383044#383044

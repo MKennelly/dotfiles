@@ -92,10 +92,10 @@ nnoremap <leader><tab> :set list!<cr>
 	inoremap <leader>x <ESC>:x<CR>
 	nnoremap <leader>x :x<CR>
 
-	nnoremap <leader>e :Ex<CR>
-	nnoremap <leader>t :tabnew<CR>:Ex<CR>
-	nnoremap <leader>v :vsplit<CR>:w<CR>:Ex<CR>
-	nnoremap <leader>s :split<CR>:w<CR>:Ex<CR>
+	nnoremap <leader>e :Exp<CR>
+	nnoremap <leader>t :tabnew<CR>:Exp<CR>
+	nnoremap <leader>v :vsplit<CR>:w<CR>:Exp<CR>
+	nnoremap <leader>s :split<CR>:w<CR>:Exp<CR>
 	nnoremap <leader>h <C-w>h
 	nnoremap <leader>H <C-w>H
 	nnoremap <leader>l <C-w>l
@@ -152,6 +152,7 @@ Plug 'mileszs/ack.vim'
 " Syntax highlighting
 Plug 'sheerun/vim-polyglot'
 Plug 'styled-components/vim-styled-components'
+Plug 'slashmili/alchemist.vim' " Elixir completion
 " Super undo
 Plug 'mbbill/undotree'
 " Git/Linting
@@ -237,7 +238,7 @@ let g:ale_fix_on_save=1
 let g:gitgutter_map_keys = 0 " disable <leader> commands, conflicts with <leader>h
 
 " vim-closetag
-let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.jsx,*.js'
+let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.jsx,*.js,*.eex'
 let g:closetag_xhtml_filenames = '*.xhtml,*.jsx,*.js'
 let g:closetag_filetypes = 'html,xhtml,phtml'
 let g:closetag_xhtml_filetypes = 'xhtml,jsx,js'
@@ -252,6 +253,8 @@ let g:user_emmet_leader_key='<C-E>'
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_guide_size = 1
 
+"alchemist
+let g:alchemist_keyword_map = '<C-k>'
 " COLORS
 " base16/tomorrow onedark, badwolf, darcula, gruvbox, dracula, onehalf light
 let g:airline_theme='onedark'

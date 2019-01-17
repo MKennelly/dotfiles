@@ -170,7 +170,7 @@ Plug 'vim-scripts/tComment'
 " Show colours in code
 Plug 'ap/vim-css-color'
 " AutoComplete/Snippets
-Plug 'Valloric/YouCompleteMe'
+Plug 'lifepillar/vim-mucomplete'
 Plug 'SirVer/ultisnips'
 " supertab makes tab work with autocomplete and ultisnips
 Plug 'ervandew/supertab'
@@ -184,13 +184,16 @@ Plug 'duff/vim-scratch'
 Plug 'galooshi/vim-import-js', { 'do': 'sudo npm install -g import-js' }
 call plug#end()
 
-" YouCompleteMe
-let g:ycm_python_interpreter_path = '/usr/local/bin/python2.7'
-let g:ycm_server_use_vim_stdout = 0
-let g:ycm_complete_in_comments = 1
-let g:ycm_collect_identifiers_from_comments_and_strings = 1
-let g:ycm_seed_identifiers_with_syntax = 1
-
+" MUComplete
+set completeopt+=menuone,noselect
+set shortmess+=c
+set belloff+=ctrlg
+let g:mucomplete#enable_auto_at_startup = 1
+let g:mucomplete#buffer_relative_paths = 1
+let g:mucomplete#chains = {
+    \ 'default' : ['ulti', 'path', 'omni', 'keyn', 'dict', 'uspl'],
+    \ 'vim'     : ['ulti', 'path', 'cmd', 'keyn']
+    \ }
 " UltiSnips config
 let g:UltiSnipsSnippetsDir = '~/.vim/ultisnips'
 let g:UltiSnipsSnippetDirectories = ['ultisnips']
@@ -199,13 +202,6 @@ let g:UltiSnipsEditSplit="vertical"
 let g:UltiSnipsExpandTrigger = '<Tab>'
 let g:UltiSnipsJumpForwardTrigger = '<Tab>'
 let g:UltiSnipsJumpBackwardTrigger = '<S-Tab>'
-" make YCM compatible with UltiSnips (using supertab)
-let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
-let g:SuperTabDefaultCompletionType = '<C-n>'
-
-" Prevent UltiSnips from removing our carefully-crafted mappings.
-" let g:UltiSnipsMappingsToIgnore = ['autocomplete']
 
 " Ack
 " ON NEW COMPUTER FIGURE OUT HOW TO GET Ag

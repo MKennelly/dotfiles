@@ -149,6 +149,8 @@ Plug 'nathanaelkane/vim-indent-guides'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'mileszs/ack.vim'
+" Find and replace
+Plug 'brooth/far.vim'
 " Syntax highlighting
 Plug 'sheerun/vim-polyglot'
 Plug 'styled-components/vim-styled-components'

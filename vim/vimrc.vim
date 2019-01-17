@@ -174,6 +174,8 @@ Plug 'Valloric/YouCompleteMe'
 Plug 'SirVer/ultisnips'
 " supertab makes tab work with autocomplete and ultisnips
 Plug 'ervandew/supertab'
+" Tag Support
+Plug 'ludovicchabant/vim-gutentags'
 "Emmet
 Plug 'mattn/emmet-vim'
 " Scratch files
@@ -219,8 +221,8 @@ let g:ctrlp_working_path_mode = 0
 let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
 " Ignore some folders and files for CtrlP indexing
 let g:ctrlp_custom_ignore = {
-\ 'dir':  '\.git$\|\.yardoc\|node_modules\|log\|tmp$',
-\ 'file': '\.so$\|\.dat$|\.DS_Store$'
+\ 'dir':  '\.yardoc\|\.git\|node_modules\|log\|tmp$',
+\ 'file': '\.so$\|\.dat$|\.DS_Store$|\.tags$'
 \ }
 
 " UndoTree
@@ -257,6 +259,16 @@ let g:indent_guides_guide_size = 1
 
 "alchemist
 let g:alchemist_keyword_map = '<C-k>'
+
+"gutentags
+set tags=./.tags,.tags;
+let g:gutentags_ctags_tagfile = '.tags'
+let g:gutentags_file_list_command = {
+  \ 'markers': {
+    \ '.git': 'git ls-files',
+  \ },
+\ }
+
 " COLORS
 " base16/tomorrow onedark, badwolf, darcula, gruvbox, dracula, onehalf light
 let g:airline_theme='onedark'

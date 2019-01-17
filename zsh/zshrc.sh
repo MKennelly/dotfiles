@@ -47,6 +47,10 @@ source ~/dotfiles/zsh/plugins/fixls.zsh
 # For vim mappings: 
 	stty -ixon
 
+# The following lines are added for enabling auto completion features for git, etc.
+autoload -Uz compinit
+compinit
+
 source ~/dotfiles/zsh/plugins/oh-my-zsh/lib/history.zsh
 source ~/dotfiles/zsh/plugins/oh-my-zsh/lib/key-bindings.zsh
 source ~/dotfiles/zsh/plugins/oh-my-zsh/lib/completion.zsh

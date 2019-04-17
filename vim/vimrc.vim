@@ -140,13 +140,17 @@ nnoremap <leader><tab> :set list!<cr>
 			\ endif
 	augroup END
 
+" *************************************************************************************************
+" PLUGIN related config
+" *************************************************************************************************
+
 " Install Vim-Plug if not installed
 if empty(glob('~/.vim/autoload/plug.vim'))
   	silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
       \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 endif
 
-" PLUGINS
+
 call plug#begin('~/.vim/plugged')
 " Themes/styling
 Plug 'joshdick/onedark.vim'
@@ -195,6 +199,10 @@ Plug 'duff/vim-scratch'
 " JS Imports
 Plug 'galooshi/vim-import-js', { 'do': 'sudo npm install -g import-js' }
 call plug#end()
+
+" *************************************************************************************************
+" PLUGIN related config
+" *************************************************************************************************
 
 " MUComplete
 set completeopt+=menuone,noselect

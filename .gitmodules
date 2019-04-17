@@ -10,3 +10,6 @@
 [submodule "zsh/plugins/powerlevel9k"]
 	path = zsh/plugins/powerlevel9k
 	url = https://github.com/bhilburn/powerlevel9k.git
+[submodule "zsh/plugins/zsh-nvm"]
+	path = zsh/plugins/zsh-nvm
+	url = https://github.com/lukechilds/zsh-nvm

@@ -12,6 +12,9 @@ set ttyfast
 set lazyredraw
 filetype plugin indent on
 set spelllang=en_ca
+set t_Co=256
+set termguicolors
+
 
 autocmd FileType javascript,html,css,scss,json setlocal shiftwidth=2 tabstop=2 expandtab softtabstop=0 " 2 tab spacing for web dev
 
@@ -75,14 +78,14 @@ set listchars=tab:\|\
 nnoremap <leader><tab> :set list!<cr>
 	set pastetoggle=<F2>
 	set mouse=a
-	
+
 	" SEARCH
 	set incsearch
 	set hlsearch
 	set ignorecase
 	set smartcase
 
-" File and Window Management 
+" File and Window Management
 	inoremap <leader>w <Esc>:w<CR>
 	nnoremap <leader>w :w<CR>
 
@@ -210,7 +213,7 @@ if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
 
-" CtrlP 
+" CtrlP
 let g:ctrlp_match_window = 'bottom,order:ttb'
 let g:ctrlp_switch_buffer = 0
 let g:ctrlp_working_path_mode = 0
@@ -275,7 +278,4 @@ let g:gutentags_file_list_command = {
 " COLORS
 " base16/tomorrow onedark, badwolf, darcula, gruvbox, dracula, onehalf light
 let g:airline_theme='onedark'
-set t_Co=256
-colorscheme onedark 
-set termguicolors
-
+colorscheme onedark

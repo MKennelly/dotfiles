@@ -174,8 +174,15 @@ Plug 'morhetz/gruvbox'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'nathanaelkane/vim-indent-guides'
+Plug 'vim-scripts/indentpython.vim'
 " File Navigation
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'terryma/vim-multiple-cursors'
+Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-repeat'
+" Better match motion
+Plug 'andymass/vim-matchup'
+
 Plug 'mileszs/ack.vim'
 " FZF fuzzy finder
 Plug '/usr/local/opt/fzf'
@@ -186,6 +193,7 @@ Plug 'brooth/far.vim'
 " Syntax highlighting
 Plug 'sheerun/vim-polyglot'
 Plug 'styled-components/vim-styled-components'
+Plug 'hail2u/vim-css3-syntax'
 Plug 'slashmili/alchemist.vim' " Elixir completion
 " Super undo
 Plug 'mbbill/undotree'
@@ -197,6 +205,8 @@ Plug 'w0rp/ale'
 Plug 'tpope/vim-surround'
 Plug 'alvan/vim-closetag'
 Plug 'jiangmiao/auto-pairs'
+" Unix cli actions
+Plug 'tpope/vim-eunuch'
 " Comment toggling
 Plug 'vim-scripts/tComment'
 " Show colours in code
@@ -204,6 +214,8 @@ Plug 'ap/vim-css-color'
 " AutoComplete/Snippets
 Plug 'lifepillar/vim-mucomplete'
 Plug 'SirVer/ultisnips'
+" Python autocomplete stuff
+Plug 'davidhalter/jedi-vim'
 " supertab makes tab work with autocomplete and ultisnips
 Plug 'ervandew/supertab'
 " Tag Support
@@ -214,6 +226,8 @@ Plug 'mattn/emmet-vim'
 Plug 'duff/vim-scratch'
 " JS Imports
 Plug 'galooshi/vim-import-js', { 'do': 'sudo npm install -g import-js' }
+"Markdown previewh
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 call plug#end()
 
 " *************************************************************************************************

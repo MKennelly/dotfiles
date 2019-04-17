@@ -1,7 +1,7 @@
 # Vars
 	HISTFILE=~/.zsh_history
-	SAVEHIST=1000 
-	setopt inc_append_history # To save every command before it is executed 
+	SAVEHIST=1000
+	setopt inc_append_history # To save every command before it is executed
 	setopt share_history # setopt inc_append_history
 	KEYTIMEOUT=1
 	unsetopt PROMPT_SP
@@ -26,7 +26,7 @@ source ~/dotfiles/zsh/plugins/fixls.zsh
 #Functions
 	# Loop a command and show the output in vim
 	loop() {
-		echo ":cq to quit\n" > /tmp/log/output 
+		echo ":cq to quit\n" > /tmp/log/output
 		fc -ln -1 > /tmp/log/program
 		while true; do
 			cat /tmp/log/program >> /tmp/log/output ;
@@ -43,8 +43,8 @@ source ~/dotfiles/zsh/plugins/fixls.zsh
 		ls;
 	}
 	alias cd="c"
-	
-# For vim mappings: 
+
+# For vim mappings:
 	stty -ixon
 
 # The following lines are added for enabling auto completion features for git, etc.

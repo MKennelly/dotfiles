@@ -16,8 +16,11 @@
 	alias v="vim -p"
 	mkdir -p /tmp/log
 	alias st='open -a Sourcetree ./'
+	alias sm="open -a 'Sublime Merge' ./"
 	alias ll='ls -la'
-	
+	alias https='http --default-scheme=https' # HTTPie https option
+	alias yod='yarn outdated'
+
 # Settings
 	export VISUAL=vim
 

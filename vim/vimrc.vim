@@ -130,8 +130,6 @@ nnoremap <leader><tab> :set list!<cr>
 	nnoremap <leader>a :tabnew<CR>:Ack<space>
 	" ImportJS
 	nnoremap <leader>m :ImportJSWord<CR>
-
-" Return to the same line you left off at
 	" FZF + ripgrep
 	nnoremap <C-p> :Files<CR>
 	nnoremap <C-g> :Rg<CR>
@@ -141,6 +139,12 @@ nnoremap <leader><tab> :set list!<cr>
 	nnoremap <leader>fc :Colors<CR>
 	nnoremap <leader>fg :GFiles?<CR>
 	nnoremap <leader>fm :Maps<CR>
+	" Vim Fugitive 3-way diff stuff
+	nnoremap <leader>gd :Gvdiff<CR>
+	nnoremap gdh :diffget //2<CR>
+	nnoremap gdl :diffget //3<CR>
+
+	" Return to the same line you left off at
 	augroup line_return
 		au!
 		au BufReadPost *

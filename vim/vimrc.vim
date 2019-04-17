@@ -132,6 +132,15 @@ nnoremap <leader><tab> :set list!<cr>
 	nnoremap <leader>m :ImportJSWord<CR>
 
 " Return to the same line you left off at
+	" FZF + ripgrep
+	nnoremap <C-p> :Files<CR>
+	nnoremap <C-g> :Rg<CR>
+	nnoremap <leader>fr :Rg!<space>
+	nnoremap <leader>fac :Commits<CR>
+	nnoremap <leader>fbc :BCommits<CR>
+	nnoremap <leader>fc :Colors<CR>
+	nnoremap <leader>fg :GFiles?<CR>
+	nnoremap <leader>fm :Maps<CR>
 	augroup line_return
 		au!
 		au BufReadPost *
@@ -163,8 +172,11 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'nathanaelkane/vim-indent-guides'
 " File Navigation
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'mileszs/ack.vim'
+" FZF fuzzy finder
+Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf.vim'
+
 " Find and replace
 Plug 'brooth/far.vim'
 " Syntax highlighting
@@ -291,6 +303,16 @@ let g:gutentags_file_list_command = {
     \ '.git': 'git ls-files',
   \ },
 \ }
+
+" Show preview for :Rg!
+command! -bang -nargs=* Rg
+  \ call fzf#vim#grep(
+  \   'rg --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
+  \   <bang>0 ? fzf#vim#with_preview('up:60%')
+  \           : fzf#vim#with_preview('right:50%:hidden', '?'),
+  \   <bang>0)
+command! -bang Colors
+  \ call fzf#vim#colors({'left': '15%', 'options': '--reverse --margin 30%,0'}, <bang>0)
 
 " COLORS
 " base16/tomorrow onedark, badwolf, darcula, gruvbox, dracula, onehalf light

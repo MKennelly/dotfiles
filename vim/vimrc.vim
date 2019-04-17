@@ -83,7 +83,7 @@ set foldmethod=indent
 
 nnoremap <leader>z zMzvzz
 
-set listchars=tab:\|\ 
+set listchars=eol:$,trail:·,tab:\|\
 nnoremap <leader><tab> :set list!<cr>
 	set pastetoggle=<F2>
 	set mouse=a

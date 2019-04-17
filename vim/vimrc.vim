@@ -212,12 +212,14 @@ Plug 'vim-scripts/tComment'
 " Show colours in code
 Plug 'ap/vim-css-color'
 " AutoComplete/Snippets
-Plug 'lifepillar/vim-mucomplete'
+Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
+" Tagbar for LSP
+Plug 'liuchengxu/vista.vim'
+" Snippets
 Plug 'SirVer/ultisnips'
 " Python autocomplete stuff
 Plug 'davidhalter/jedi-vim'
 " supertab makes tab work with autocomplete and ultisnips
-Plug 'ervandew/supertab'
 " Tag Support
 Plug 'ludovicchabant/vim-gutentags'
 "Emmet
@@ -235,21 +237,11 @@ call plug#end()
 " *************************************************************************************************
 
 " MUComplete
-set completeopt+=menuone,noselect
-set shortmess+=c
-set belloff+=ctrlg
-let g:mucomplete#enable_auto_at_startup = 1
-let g:mucomplete#buffer_relative_paths = 1
-let g:mucomplete#chains = {
-    \ 'default' : ['ulti', 'path', 'omni', 'keyn', 'dict', 'uspl'],
-    \ 'vim'     : ['ulti', 'path', 'cmd', 'keyn']
-    \ }
 " UltiSnips config
 let g:UltiSnipsSnippetsDir = '~/.vim/ultisnips'
 let g:UltiSnipsSnippetDirectories = ['ultisnips']
 let g:UltiSnipsEditSplit="vertical"
 " YouCompleteMe and UltiSnips compatibility.
-let g:UltiSnipsExpandTrigger = '<Tab>'
 let g:UltiSnipsJumpForwardTrigger = '<Tab>'
 let g:UltiSnipsJumpBackwardTrigger = '<S-Tab>'
 
@@ -286,8 +278,10 @@ endif
 let g:undotree_SetFocusWhenToggle = 1
 
 " ALE
+let g:ale_completion_enabled = 0
+let g:ale_linters_explicit = 1
 let g:ale_fixers = {
-\	'javascript': ['eslint']
+\   'reason': ['refmt']
 \}
 let g:ale_fix_on_save=1
 
@@ -331,6 +325,9 @@ command! -bang -nargs=* Rg
   \   <bang>0)
 command! -bang Colors
   \ call fzf#vim#colors({'left': '15%', 'options': '--reverse --margin 30%,0'}, <bang>0)
+
+" Coc.nvim config
+source $HOME/dotfiles/vim/coc-settings.vim
 
 " COLORS
 " base16/tomorrow onedark, badwolf, darcula, gruvbox, dracula, onehalf light

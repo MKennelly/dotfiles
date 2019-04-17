@@ -15,10 +15,19 @@ set spelllang=en_ca
 set t_Co=256
 set termguicolors
 
+" Spaces/tabs
+autocmd FileType javascript,html,css,scss,json,liquid,reason setlocal shiftwidth=2 tabstop=2 expandtab softtabstop=0 " 2 tab spacing for web dev
+autocmd FileType markdown setlocal shiftwidth=4 tabstop=4 expandtab softtabstop=0 " 4 tab spaces
 
-autocmd FileType javascript,html,css,scss,json setlocal shiftwidth=2 tabstop=2 expandtab softtabstop=0 " 2 tab spacing for web dev
+" Odd file extensions
+autocmd BufRead,BufNewFile *.prisma setfiletype graphql
+autocmd BufNewFile,BufRead *.eslintrc set syntax=json
+autocmd BufNewFile,BufRead *.prettierrc set syntax=json
 
-" Trigger `autoread` when files changes on disk
+" Spelling on for certain file types
+autocmd FileType markdown,text,gitcommit setlocal spell
+
+"Trigger `autoread` when files changes on disk
 " https://unix.stackexchange.com/questions/149209/refresh-changed-content-of-file-opened-in-vim/383044#383044
 autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * if mode() != 'c' | checktime | endif
 " Notification after file change

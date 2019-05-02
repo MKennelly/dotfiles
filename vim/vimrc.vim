@@ -134,6 +134,7 @@ nnoremap <leader><tab> :set list!<cr>
 	nnoremap <C-p> :Files<CR>
 	nnoremap <C-g> :Rg<CR>
 	nnoremap <leader>fr :Rg!<space>
+	nnoremap <leader>b :Buffers<CR>
 	nnoremap <leader>fac :Commits<CR>
 	nnoremap <leader>fbc :BCommits<CR>
 	nnoremap <leader>fc :Colors<CR>
@@ -143,6 +144,10 @@ nnoremap <leader><tab> :set list!<cr>
 	nnoremap <leader>gd :Gvdiff<CR>
 	nnoremap gdh :diffget //2<CR>
 	nnoremap gdl :diffget //3<CR>
+	" Buffer management
+	nnoremap <tab> :bnext<CR>
+	nnoremap <S-tab> :bprevious<CR>
+	nnoremap <C-x> :bdelete<CR>
 
 	" Return to the same line you left off at
 	augroup line_return
@@ -325,6 +330,11 @@ command! -bang -nargs=* Rg
   \   <bang>0)
 command! -bang Colors
   \ call fzf#vim#colors({'left': '15%', 'options': '--reverse --margin 30%,0'}, <bang>0)
+
+" Airline config
+let g:airline#extensions#tabline#enabled = 1
+" let g:airline#extensions#tabline#buffer_nr_show = 1
+let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 
 " Coc.nvim config
 source $HOME/dotfiles/vim/coc-settings.vim

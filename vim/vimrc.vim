@@ -148,6 +148,9 @@ nnoremap <leader><tab> :set list!<cr>
 	nnoremap <tab> :bnext<CR>
 	nnoremap <S-tab> :bprevious<CR>
 	nnoremap <C-x> :bdelete<CR>
+	nnoremap <leader><leader> <c-^>
+	nnoremap <leader>bq :bp <bar> bd! #<cr>
+	nnoremap <leader>ba :bufdo bd!<cr>
 
 	" Return to the same line you left off at
 	augroup line_return

@@ -77,6 +77,10 @@ check_for_software tmux
 echo
 check_for_software curl
 echo
+check_for_software fzf
+echo
+check_for_software ripgrep
+echo
 
 echo "Installing vim-plug"
 # Import vim-plug

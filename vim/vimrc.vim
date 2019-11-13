@@ -16,7 +16,7 @@ set t_Co=256
 set termguicolors
 
 " Spaces/tabs
-autocmd FileType javascript,html,css,scss,json,liquid,reason setlocal shiftwidth=2 tabstop=2 expandtab softtabstop=0 " 2 tab spacing for web dev
+autocmd FileType javascript,typescript,typescriptreact,html,css,scss,json,liquid,reason setlocal shiftwidth=2 tabstop=2 expandtab softtabstop=0 " 2 tab spacing for web dev
 autocmd FileType markdown setlocal shiftwidth=4 tabstop=4 expandtab softtabstop=0 " 4 tab spaces
 
 " Odd file extensions
@@ -62,8 +62,6 @@ nnoremap H 0
 vnoremap H 0
 nnoremap L $
 vnoremap L $
-nnoremap J G
-nnoremap K gg
 nnoremap B ^
 vnoremap B ^
 nnoremap E $
@@ -85,14 +83,15 @@ nnoremap <leader>z zMzvzz
 
 set listchars=eol:$,trail:·,tab:\|\
 nnoremap <leader><tab> :set list!<cr>
-	set pastetoggle=<F2>
-	set mouse=a
 
-	" SEARCH
-	set incsearch
-	set hlsearch
-	set ignorecase
-	set smartcase
+set pastetoggle=<F2>
+set mouse=a
+
+" SEARCH
+set incsearch
+set hlsearch
+set ignorecase
+set smartcase
 
 " File and Window Management
 	inoremap <leader>w <Esc>:w<CR>

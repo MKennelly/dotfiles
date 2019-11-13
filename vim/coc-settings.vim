@@ -51,8 +51,12 @@ endfunction
 " Highlight symbol under cursor on CursorHold
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
-" Remap for rename current word
-nmap <leader>cr <Plug>(coc-rename)
+" Remap for refactor/rename current word
+nmap <leader>rf <Plug>(coc-refactor)
+nmap <leader>rn <Plug>(coc-rename)
+
+" Remap for showing method signature
+nmap <leader>fs :call CocActionAsync('showSignatureHelp')<CR>
 
 " Remap for format selected region
 vmap <leader>f  <Plug>(coc-format-selected)

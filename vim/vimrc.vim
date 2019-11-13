@@ -230,7 +230,7 @@ Plug 'SirVer/ultisnips'
 Plug 'davidhalter/jedi-vim'
 " supertab makes tab work with autocomplete and ultisnips
 " Tag Support
-Plug 'ludovicchabant/vim-gutentags'
+" Plug 'ludovicchabant/vim-gutentags'
 "Emmet
 Plug 'mattn/emmet-vim'
 " Scratch files
@@ -317,13 +317,13 @@ let g:indent_guides_guide_size = 1
 let g:alchemist_keyword_map = '<C-k>'
 
 "gutentags
-set tags=./.tags,.tags;
-let g:gutentags_ctags_tagfile = '.tags'
-let g:gutentags_file_list_command = {
-  \ 'markers': {
-    \ '.git': 'git ls-files',
-  \ },
-\ }
+" set tags=./.tags,.tags;
+" let g:gutentags_ctags_tagfile = '.tags'
+" let g:gutentags_file_list_command = {
+"   \ 'markers': {
+"     \ '.git': 'git ls-files',
+"   \ },
+" \ }
 
 " Show preview for :Rg!
 command! -bang -nargs=* Rg

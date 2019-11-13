@@ -1,7 +1,7 @@
 " General Vim settings
 set nocompatible
 syntax enable
-let mapleader=","
+let mapleader="\<space>"
 set autoindent
 set tabstop=4 		" number of visual spaces per tab
 set shiftwidth=4
@@ -76,7 +76,6 @@ set backspace=indent,eol,start
 set foldenable
 set foldlevelstart=10
 set foldnestmax=10
-nnoremap <Space> za
 set foldmethod=indent
 
 nnoremap <leader>z zMzvzz

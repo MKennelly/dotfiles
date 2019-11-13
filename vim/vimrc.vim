@@ -93,71 +93,74 @@ set ignorecase
 set smartcase
 
 " File and Window Management
-	inoremap <leader>w <Esc>:w<CR>
-	nnoremap <leader>w :w<CR>
+" inoremap <leader>w <Esc>:w<CR>
+nnoremap <leader>w :w<CR>
 
-	inoremap <leader>q <ESC>:q<CR>
-	nnoremap <leader>q :q<CR>
+" inoremap <leader>q <ESC>:q<CR>
+nnoremap <leader>q :q<CR>
 
-	inoremap <leader>x <ESC>:x<CR>
-	nnoremap <leader>x :x<CR>
+" inoremap <leader>x <ESC>:x<CR>
+nnoremap <leader>x :x<CR>
+" Reload current file buffer
+nnoremap <leader>re :edit<CR>
+"Pane/tab management
+nnoremap <leader>e :Exp<CR>
+nnoremap <leader>t :tabnew<CR>:Exp<CR>
+nnoremap <leader>v :vsplit<CR>:w<CR>:Exp<CR>
+nnoremap <leader>s :split<CR>:w<CR>:Exp<CR>
+nnoremap <leader>h <C-w>h
+nnoremap <leader>H <C-w>H
+nnoremap <leader>l <C-w>l
+nnoremap <leader>L <C-w>L
+nnoremap <leader>j <C-w>j
+nnoremap <leader>J <C-w>J
+nnoremap <leader>k <C-w>k
+nnoremap <leader>K <C-w>K
+nnoremap <leader>n <C-w>w
+" Replace
+nnoremap <leader>r :%s///g<left><left><left>
+" Spell checking
+nnoremap <leader>zz :set spell<CR>
+nnoremap <leader>zn :set nospell<CR>
+" toggle NerdTree
+nnoremap <leader>ff :NERDTreeToggle<CR>
+" toggle undotree
+nnoremap <leader>u :UndotreeToggle<CR>
+" open ag.vim
+nnoremap <leader>a :tabnew<CR>:Ack<space>
+" ImportJS
+nnoremap <leader>m :ImportJSWord<CR>
+" FZF + ripgrep
+nnoremap <C-p> :Files<CR>
+nnoremap <C-g> :Rg<CR>
+nnoremap <leader>fr :Rg!<space>
+nnoremap <leader>b :Buffers<CR>
+nnoremap <leader>fac :Commits<CR>
+nnoremap <leader>fbc :BCommits<CR>
+nnoremap <leader>fc :Colors<CR>
+nnoremap <leader>fg :GFiles?<CR>
+nnoremap <leader>fm :Maps<CR>
+" Vim Fugitive 3-way diff stuff
+nnoremap <leader>gd :Gvdiff<CR>
+nnoremap gdh :diffget //2<CR>
+nnoremap gdl :diffget //3<CR>
+" Buffer management
+nnoremap <right> :bnext<CR>
+nnoremap <left> :bprevious<CR>
+nnoremap <C-x> :bdelete<CR>
+nnoremap <leader>bq :bp <bar> bd! #<cr>
+nnoremap <leader>ba :bufdo bd!<cr>
+" Yank to clipboard
+vnoremap <leader>y "+y
 
-	nnoremap <leader>e :Exp<CR>
-	nnoremap <leader>t :tabnew<CR>:Exp<CR>
-	nnoremap <leader>v :vsplit<CR>:w<CR>:Exp<CR>
-	nnoremap <leader>s :split<CR>:w<CR>:Exp<CR>
-	nnoremap <leader>h <C-w>h
-	nnoremap <leader>H <C-w>H
-	nnoremap <leader>l <C-w>l
-	nnoremap <leader>L <C-w>L
-	nnoremap <leader>j <C-w>j
-	nnoremap <leader>J <C-w>J
-	nnoremap <leader>k <C-w>k
-	nnoremap <leader>K <C-w>K
-	nnoremap <leader>n <C-w>w
-	" Replace
-	nnoremap <leader>r :%s///g<left><left><left>
-	" Spell checking
-	nnoremap <leader>zz :set spell<CR>
-	nnoremap <leader>zn :set nospell<CR>
-	" toggle NerdTree
-	nnoremap <leader>ff :NERDTreeToggle<CR>
-	" toggle undotree
-	nnoremap <leader>u :UndotreeToggle<CR>
-	" open ag.vim
-	nnoremap <leader>a :tabnew<CR>:Ack<space>
-	" ImportJS
-	nnoremap <leader>m :ImportJSWord<CR>
-	" FZF + ripgrep
-	nnoremap <C-p> :Files<CR>
-	nnoremap <C-g> :Rg<CR>
-	nnoremap <leader>fr :Rg!<space>
-	nnoremap <leader>b :Buffers<CR>
-	nnoremap <leader>fac :Commits<CR>
-	nnoremap <leader>fbc :BCommits<CR>
-	nnoremap <leader>fc :Colors<CR>
-	nnoremap <leader>fg :GFiles?<CR>
-	nnoremap <leader>fm :Maps<CR>
-	" Vim Fugitive 3-way diff stuff
-	nnoremap <leader>gd :Gvdiff<CR>
-	nnoremap gdh :diffget //2<CR>
-	nnoremap gdl :diffget //3<CR>
-	" Buffer management
-	nnoremap <tab> :bnext<CR>
-	nnoremap <S-tab> :bprevious<CR>
-	nnoremap <C-x> :bdelete<CR>
-	nnoremap <leader><leader> <c-^>
-	nnoremap <leader>bq :bp <bar> bd! #<cr>
-	nnoremap <leader>ba :bufdo bd!<cr>
-
-	" Return to the same line you left off at
-	augroup line_return
-		au!
-		au BufReadPost *
-			\ if line("'\"") > 0 && line("'\"") <= line("$") |
-			\	execute 'normal! g`"zvzz' |
-			\ endif
-	augroup END
+" Return to the same line you left off at
+augroup line_return
+	au!
+	au BufReadPost *
+		\ if line("'\"") > 0 && line("'\"") <= line("$") |
+		\	execute 'normal! g`"zvzz' |
+		\ endif
+augroup END
 
 " *************************************************************************************************
 " PLUGIN related config

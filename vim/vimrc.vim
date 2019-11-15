@@ -261,24 +261,6 @@ if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
 
-" CtrlP
-let g:ctrlp_match_window = 'bottom,order:ttb'
-let g:ctrlp_switch_buffer = 0
-let g:ctrlp_working_path_mode = 0
-" let g:ctrlp_user_command = ''
-let g:ctrlp_user_command = {
-  \ 'types': {
-    \ 1: ['.git', 'git -C %s ls-files --cached --exclude-standard --others'],
-    \ 2: ['.hg', 'hg --cwd %s locate -I .'],
-    \ },
-  \ 'fallback': 'ag %s -l --nocolor --hidden -g ""'
-  \ }
-" Ignore some folders and files for CtrlP indexing
-let g:ctrlp_custom_ignore = {
-\ 'dir':  '\.yardoc\|\.git\|node_modules\|log\|tmp$',
-\ 'file': '\.so$\|\.dat$|\.DS_Store$|\.tags$'
-\ }
-
 " UndoTree
 if has("persistent_undo")
   set undodir=~/.undodir/

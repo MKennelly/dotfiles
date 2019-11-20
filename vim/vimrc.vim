@@ -130,6 +130,8 @@ nnoremap <leader>u :UndotreeToggle<CR>
 nnoremap <leader>a :tabnew<CR>:Ack<space>
 " ImportJS
 nnoremap <leader>m :ImportJSWord<CR>
+nnoremap <leader>o :ImportJSFix<CR>
+nnoremap <leader>g :ImportJSGoto<CR>
 " FZF + ripgrep
 nnoremap <C-p> :Files<CR>
 nnoremap <C-g> :Rg<CR>

@@ -203,7 +203,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'brooth/far.vim'
 " Syntax highlighting
 Plug 'sheerun/vim-polyglot'
-Plug 'styled-components/vim-styled-components'
+Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 Plug 'hail2u/vim-css3-syntax'
 Plug 'slashmili/alchemist.vim' " Elixir completion
 " Super undo
@@ -247,10 +247,8 @@ call plug#end()
 " PLUGIN related config
 " *************************************************************************************************
 
-" MUComplete
 " UltiSnips config
-let g:UltiSnipsSnippetsDir = '~/.vim/ultisnips'
-let g:UltiSnipsSnippetDirectories = ['ultisnips']
+let g:UltiSnipsSnippetDirectories = ['~/.vim/ultisnips']
 let g:UltiSnipsEditSplit="vertical"
 " YouCompleteMe and UltiSnips compatibility.
 let g:UltiSnipsJumpForwardTrigger = '<Tab>'

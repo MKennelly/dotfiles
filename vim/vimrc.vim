@@ -58,10 +58,6 @@ nnoremap n nzzzv
 nnoremap N Nzzzv
 
 " File navigation
-nnoremap H 0
-vnoremap H 0
-nnoremap L $
-vnoremap L $
 nnoremap B ^
 vnoremap B ^
 nnoremap E $
@@ -134,7 +130,7 @@ nnoremap <leader>o :ImportJSFix<CR>
 nnoremap <leader>g :ImportJSGoto<CR>
 " FZF + ripgrep
 nnoremap <C-p> :Files<CR>
-nnoremap <C-g> :Rg<CR>
+nnoremap <C-g> :RgWithHidden<CR>
 nnoremap <leader>fr :Rg!<space>
 nnoremap <leader>b :Buffers<CR>
 nnoremap <leader>fac :Commits<CR>
@@ -311,6 +307,8 @@ let g:alchemist_keyword_map = '<C-k>'
 "   \ },
 " \ }
 
+command! -bang -nargs=* RgWithHidden
+  \ call fzf#vim#grep('rg --hidden --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1, <bang>0)
 " Show preview for :Rg!
 command! -bang -nargs=* Rg
   \ call fzf#vim#grep(

@@ -1,0 +1,37 @@
+{
+  // enable codelens for stuff like import-cost
+  "codeLens.enable": true,
+  // make vim select first item on completion
+  "suggest.noselect": false,
+  // when snippet activated and pumvisible, prefer complete completion.
+  "suggest.preferCompleteThanJumpPlaceholder": true,
+
+  // Omni complete for non LSP languages
+  // "coc.source.omni.filetypes": ["c"],
+
+  // ESLint
+  "eslint.autoFixOnSave": true,
+  "eslint.filetypes": [ "javascript", "javascriptreact", "typescript", "typescriptreact", "html" ],
+
+  // Prettier
+  "prettier.printWidth": 100,
+  "prettier.trailingComma": "es5",
+
+  "languageserver": {
+    "reason": {
+      "command": "/Users/mike/reason-language-server/reason-language-server.exe",
+      "filetypes": ["reason"]
+    }
+  },
+
+  "coc.preferences.currentFunctionSymbolAutoUpdate": true,
+
+  "importCost.showCalculatingDecoration": true,
+
+  // coc-yaml
+  "yaml.schemas": {
+    "Kubernetes": ".gcp*/*.yml",
+    "http://json.schemastore.org/github-action": ".github/actions/*.yml",
+    "http://json.schemastore.org/github-workflow": ".github/workflows/*.yml"
+  }
+}

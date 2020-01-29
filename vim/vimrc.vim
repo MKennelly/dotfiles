@@ -217,7 +217,7 @@ Plug 'tpope/vim-eunuch'
 " Comment toggling
 Plug 'vim-scripts/tComment'
 " Show colours in code
-Plug 'ap/vim-css-color'
+Plug 'chrisbra/Colorizer'
 " AutoComplete/Snippets
 Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
 " Tagbar for LSP
@@ -294,6 +294,10 @@ let g:user_emmet_leader_key='<C-E>'
 "vim-indent-guides
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_guide_size = 1
+
+"Colorizer
+let g:colorizer_auto_filetype='css,html,javascript,javascriptreact,typescript,typescriptreact'
+let g:colorizer_colornames = 0
 
 "alchemist
 let g:alchemist_keyword_map = '<C-k>'

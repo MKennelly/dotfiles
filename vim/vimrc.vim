@@ -211,7 +211,7 @@ Plug 'w0rp/ale'
 " Stuff to make surrounding code easy
 Plug 'tpope/vim-surround'
 Plug 'alvan/vim-closetag'
-Plug 'jiangmiao/auto-pairs'
+Plug 'tmsvg/pear-tree'
 " Unix cli actions
 Plug 'tpope/vim-eunuch'
 " Comment toggling
@@ -274,6 +274,19 @@ let g:ale_fix_on_save=1
 
 " GitGutter 
 let g:gitgutter_map_keys = 0 " disable <leader> commands, conflicts with <leader>h
+
+" pear-tree
+let g:pear_tree_pairs = {
+            \ '(': {'closer': ')'},
+            \ '[': {'closer': ']'},
+            \ '{': {'closer': '}'},
+            \ "'": {'closer': "'"},
+            \ '"': {'closer': '"'},
+            \ '`': {'closer': '`', 'not_at': []}
+            \ }
+let g:pear_tree_smart_openers = 1
+let g:pear_tree_smart_closers = 1
+let g:pear_tree_smart_backspace = 1
 
 " vim-closetag
 let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.jsx,*.js,*.tsx,*.eex,*.re'

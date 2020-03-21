@@ -275,6 +275,9 @@ let g:ale_fix_on_save=1
 " GitGutter 
 let g:gitgutter_map_keys = 0 " disable <leader> commands, conflicts with <leader>h
 
+" auto-pairs
+let g:AutoPairsMultilineClose = 1 " disable jumping to next line when closing brackets
+
 " vim-closetag
 let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.jsx,*.js,*.tsx,*.eex,*.re'
 let g:closetag_xhtml_filenames = '*.xhtml,*.jsx,*.js,*.tsx,*.re'

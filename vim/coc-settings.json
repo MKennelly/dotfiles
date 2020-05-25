@@ -24,6 +24,9 @@
     }
   },
 
+  // Typescript
+  "typescript.preferences.importModuleSpecifier": "non-relative",
+
   "coc.preferences.currentFunctionSymbolAutoUpdate": true,
 
   "importCost.showCalculatingDecoration": true,

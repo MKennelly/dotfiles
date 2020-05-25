@@ -209,7 +209,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'w0rp/ale'
 " Stuff to make surrounding code easy
-Plug 'tpope/vim-surround'
+" Plug 'tpope/vim-surround'
+Plug 'machakann/vim-sandwich'
 Plug 'alvan/vim-closetag'
 Plug 'jiangmiao/auto-pairs'
 " Unix cli actions
@@ -292,7 +293,7 @@ let g:closetag_regions =  {
 \ }
 
 "vim-emmet
-let g:user_emmet_leader_key='<C-E>'
+let g:user_emmet_leader_key='<C-Z>'
 
 "vim-indent-guides
 let g:indent_guides_enable_on_vim_startup = 1

@@ -306,6 +306,10 @@ let g:colorizer_colornames = 0
 "alchemist
 let g:alchemist_keyword_map = '<C-k>'
 
+"Far.vim
+let g:far#source = 'rg'
+let g:far#ignore_files = [ '~/dotfiles/vim/farignore' ]
+
 "gutentags
 " set tags=./.tags,.tags;
 " let g:gutentags_ctags_tagfile = '.tags'

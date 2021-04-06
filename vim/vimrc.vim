@@ -192,7 +192,7 @@ Plug 'andymass/vim-matchup'
 
 Plug 'mileszs/ack.vim'
 " FZF fuzzy finder
-Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
 " Find and replace

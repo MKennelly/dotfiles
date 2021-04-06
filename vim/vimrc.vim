@@ -220,7 +220,7 @@ Plug 'vim-scripts/tComment'
 " Show colours in code
 Plug 'chrisbra/Colorizer'
 " AutoComplete/Snippets
-Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Tagbar for LSP
 Plug 'liuchengxu/vista.vim'
 " Snippets

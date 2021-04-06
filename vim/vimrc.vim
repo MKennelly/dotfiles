@@ -23,6 +23,7 @@ autocmd FileType markdown setlocal shiftwidth=4 tabstop=4 expandtab softtabstop=
 autocmd BufRead,BufNewFile *.prisma setfiletype graphql
 autocmd BufNewFile,BufRead *.eslintrc set syntax=json
 autocmd BufNewFile,BufRead *.prettierrc set syntax=json
+autocmd BufRead,BufNewFile .env.* setfiletype sh
 
 " Spelling on for certain file types
 autocmd FileType markdown,text,gitcommit setlocal spell

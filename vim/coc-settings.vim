@@ -66,6 +66,9 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 nmap <leader>rf <Plug>(coc-refactor)
 nmap <leader>rn <Plug>(coc-rename)
 
+" Rename current file
+nmap <leader>fmv :CocCommand workspace.renameCurrentFile<CR>
+
 " Remap for showing method signature
 nmap <leader>fs :call CocActionAsync('showSignatureHelp')<CR>
 

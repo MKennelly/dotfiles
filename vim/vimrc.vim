@@ -183,6 +183,8 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'vim-scripts/indentpython.vim'
+Plug 'pineapplegiant/spaceduck', { 'branch': 'main' }
+Plug 'mhartington/oceanic-next'
 " File Navigation
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'terryma/vim-multiple-cursors'

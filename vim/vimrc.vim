@@ -28,6 +28,9 @@ autocmd BufRead,BufNewFile .env.* setfiletype sh
 " Spelling on for certain file types
 autocmd FileType markdown,text,gitcommit setlocal spell
 
+" Elixir run `mix format` via gq command
+autocmd FileType elixir setlocal formatprg=mix\ format\ -
+
 "Trigger `autoread` when files changes on disk
 " https://unix.stackexchange.com/questions/149209/refresh-changed-content-of-file-opened-in-vim/383044#383044
 autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * if mode() != 'c' | checktime | endif
@@ -131,7 +134,7 @@ nnoremap <leader>o :ImportJSFix<CR>
 nnoremap <leader>g :ImportJSGoto<CR>
 " FZF + ripgrep
 nnoremap <C-p> :Files<CR>
-nnoremap <C-g> :RgWithHidden<CR>
+nnoremap <C-g> :RgWithPreview<CR>
 nnoremap <leader>fr :Rg!<space>
 nnoremap <leader>b :Buffers<CR>
 nnoremap <leader>fac :Commits<CR>
@@ -151,6 +154,12 @@ nnoremap <leader>bq :bp <bar> bd! #<cr>
 nnoremap <leader>ba :bufdo bd!<cr>
 " Yank to clipboard
 vnoremap <leader>y "+y
+
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
 
 " Return to the same line you left off at
 augroup line_return
@@ -185,6 +194,7 @@ Plug 'nathanaelkane/vim-indent-guides'
 Plug 'vim-scripts/indentpython.vim'
 Plug 'pineapplegiant/spaceduck', { 'branch': 'main' }
 Plug 'mhartington/oceanic-next'
+Plug 'wuelnerdotexe/vim-astro'
 " File Navigation
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'terryma/vim-multiple-cursors'
@@ -216,6 +226,8 @@ Plug 'w0rp/ale'
 Plug 'machakann/vim-sandwich'
 Plug 'alvan/vim-closetag'
 Plug 'jiangmiao/auto-pairs'
+" Align text
+Plug 'junegunn/vim-easy-align'
 " Unix cli actions
 Plug 'tpope/vim-eunuch'
 " Comment toggling
@@ -228,6 +240,8 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'liuchengxu/vista.vim'
 " Snippets
 Plug 'SirVer/ultisnips'
+"TEMP to stop coc.nvim whining
+Plug 'honza/vim-snippets'
 " Python autocomplete stuff
 Plug 'davidhalter/jedi-vim'
 " supertab makes tab work with autocomplete and ultisnips
@@ -239,7 +253,7 @@ Plug 'mattn/emmet-vim'
 Plug 'duff/vim-scratch'
 " JS Imports
 Plug 'galooshi/vim-import-js', { 'do': 'sudo npm install -g import-js' }
-"Markdown previewh
+"Markdown preview
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 call plug#end()
 
@@ -310,8 +324,11 @@ let g:colorizer_colornames = 0
 let g:alchemist_keyword_map = '<C-k>'
 
 "Far.vim
-let g:far#source = 'rg'
+let g:far#source = 'rgnvim'
 let g:far#ignore_files = [ '~/dotfiles/vim/farignore' ]
+
+"Astro
+let g:astro_typescript = 'enable'
 
 "gutentags
 " set tags=./.tags,.tags;
@@ -322,8 +339,11 @@ let g:far#ignore_files = [ '~/dotfiles/vim/farignore' ]
 "   \ },
 " \ }
 
+command! -bang -nargs=* RgWithPreview
+  \ call fzf#vim#grep('rg --column --line-number --no-heading --color=always --smart-case -- '.shellescape(<q-args>), 1,
+  \   fzf#vim#with_preview(), <bang>0)
 command! -bang -nargs=* RgWithHidden
-  \ call fzf#vim#grep('rg --hidden --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1, <bang>0)
+  \ call fzf#vim#grep('rg -hidden --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1, <bang>0)
 " Show preview for :Rg!
 command! -bang -nargs=* Rg
   \ call fzf#vim#grep(
@@ -333,6 +353,7 @@ command! -bang -nargs=* Rg
   \   <bang>0)
 command! -bang Colors
   \ call fzf#vim#colors({'left': '15%', 'options': '--reverse --margin 30%,0'}, <bang>0)
+let g:fzf_history_dir = '~/.local/share/fzf-history'
 
 " Airline config
 let g:airline#extensions#tabline#enabled = 1

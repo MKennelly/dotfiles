@@ -4,10 +4,10 @@
     # !xxxx : exception-rule, not to ignore the patten, this overrides ignore-rules
 
 
-.git/
+.git/*
 
 *.pyc
 
-__pycache__/
+__pycache__/*
 
-node_modules/
+node_modules/*

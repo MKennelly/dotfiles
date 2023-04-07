@@ -37,6 +37,16 @@ map("n", "N", "Nzzzv", { silent = true })
 -- Move vertically by visual line
 map("n", "j", "gj")
 map("n", "k", "gk")
+-- Move selected block up/down in visual mode
+map("v", "J", ":m '>+1<CR>gv=gv")
+map("v", "K", ":m '<-2<CR>gv=gv")
+-- J to move line below up to join current, but keep cursor where it is rather than move to join point
+map("n", "J", "mzJ`z")
+-- Allow leader p to paste without overriding buffer to let you repeatedly paste same text
+map("x", "<leader>p", "\"_dP")
+-- Delete to void buffer with leader d
+map("n", "<leader>d", "\"_d")
+map("v", "<leader>d", "\"_d")
 
 -- Pane/tab management
 map("n", "<leader>e", vim.cmd.Exp)
@@ -71,7 +81,9 @@ map("n", "<C-x>", vim.cmd.bdelete)
 map("n", "<leader>bq", ":bp <bar> bd! #<cr>")
 map("n", "<leader>ba", ":bufdo bd!<cr>")
 -- Yank to clipboard
+map("n", "<leader>y", '"+y')
 map("v", "<leader>y", '"+y')
+map("n", "<leader>Y", '"+Y')
 
 -- Toggle listchars
 map("n", "<leader><tab>", ":set list!<cr>")

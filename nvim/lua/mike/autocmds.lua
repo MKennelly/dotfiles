@@ -5,7 +5,7 @@ local autocmd = api.nvim_create_autocmd
 -- Spaces/tabs
 autocmd("FileType",
 {
-	pattern = {"javascript", "typescript", "typescriptreact", "html", "css", "scss", "liquid", "json", "reason", "svelte", "astro" },
+	pattern = {"javascript", "typescript", "typescriptreact", "html", "css", "scss", "liquid", "json", "reason", "svelte", "astro", "lua" },
 	callback = function()
 		vim.opt_local.shiftwidth = 2
 		vim.opt_local.tabstop = 2
@@ -31,11 +31,4 @@ autocmd("FileType",
 	callback = function()
 		vim.opt_local.spell = true
 	end
-})
-
--- Eslint auto format on save
-vim.api.nvim_create_autocmd('BufWritePre', {
-  pattern = { '*.tsx', '*.ts', '*.jsx', '*.js', '*.svelte', '*.astro' },
-  command = 'silent! EslintFixAll',
-  group = vim.api.nvim_create_augroup('MyAutocmdsJavaScriptFormatting', {}),
 })

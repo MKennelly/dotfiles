@@ -64,8 +64,6 @@ return {
 			{'L3MON4D3/LuaSnip'},     -- Required
 		}
 	},
-  -- For use with things without proper LSPs like prettier
-	{ 'jose-elias-alvarez/null-ls.nvim', dependencies = { {'nvim-lua/plenary.nvim'} } },
 
   -- 'github/copilot.vim',
   {
@@ -118,6 +116,4 @@ return {
       })
     end,
   },
-
-  'MunifTanjim/prettier.nvim',
 }

@@ -1,3 +1,7 @@
+-- TS context commentstring is a plugin that automatically sets the commentstring type based on context
+require('ts_context_commentstring').setup { }
+vim.g.skip_ts_context_commentstring_module = true
+
 require'nvim-treesitter.configs'.setup {
   -- A list of parser names, or "all" (the five listed parsers should always be installed)
   ensure_installed = { "c", "lua", "vim", "vimdoc", "html", "css", "query", "javascript", "typescript", "tsx", "astro", "svelte" },
@@ -29,8 +33,4 @@ require'nvim-treesitter.configs'.setup {
 		  'glimmer','handlebars','hbs'
 	  }
   },
-
-  context_commentstring = {
-    enable = true,
-  }
 }

@@ -49,4 +49,14 @@ require('lspconfig').eslint.setup({
 	end,
 })
 
+require('lspconfig').stylelint_lsp.setup({
+  filetypes = { 'css', 'scss', 'less', 'svelte' },
+  settings = {
+    stylelintplus = {
+      autoFixOnSave = true,
+      autoFixOnFormat = true,
+    }
+  },
+})
+
 lsp.setup()

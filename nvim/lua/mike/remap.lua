@@ -50,10 +50,10 @@ map("v", "<leader>d", "\"_d")
 
 -- Pane/tab management
 -- map("n", "<leader>e", vim.cmd.Exp)
-map("n", "<leader>e", "<CMD>Oil<CR>")
+map("n", "<leader>e", vim.cmd.Oil)
 map("n", "<leader>t", function()
   vim.cmd.tabnew()
-  vim.cmd.Exp()
+  vim.cmd.Oil()
 end)
 map("n", "<leader>v", vim.cmd.vsplit)
 map("n", "<leader>s", vim.cmd.split)

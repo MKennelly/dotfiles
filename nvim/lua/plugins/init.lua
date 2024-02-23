@@ -6,6 +6,13 @@ return {
 	  dependencies = { 'nvim-tree/nvim-web-devicons' }
 	},
 
+  {
+    'stevearc/oil.nvim',
+    opts = {},
+    -- Optional dependencies
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+  },
+
 	'navarasu/onedark.nvim',
   { "catppuccin/nvim", as = "catppuccin" },
 

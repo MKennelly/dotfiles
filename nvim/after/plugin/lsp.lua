@@ -36,6 +36,9 @@ lsp.on_attach(function(client, bufnr)
   vim.keymap.set("n", "<leader>drr", function() vim.lsp.buf.references() end, opts)
   vim.keymap.set("n", "<leader>drn", function() vim.lsp.buf.rename() end, opts)
   vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
+  -- Normal/visual mode code actions
+  vim.keymap.set("n", "<M-CR>", function() vim.lsp.buf.code_action() end, opts)
+  vim.keymap.set("v", "<M-CR>", function() vim.lsp.buf.code_action() end, opts)
 end)
 
 -- Eslint auto format on save

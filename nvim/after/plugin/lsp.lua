@@ -66,4 +66,13 @@ require('lspconfig').tailwindcss.setup({
   filetypes = {'aspnetcorerazor', 'astro', 'astro-markdown', 'blade', 'clojure', 'css', 'django-html', 'htmldjango', 'edge', 'eelixir', 'elixir', 'ejs', 'erb', 'eruby', 'gohtml', 'gohtmltmpl', 'haml', 'handlebars', 'hbs', 'html', 'html-eex', 'heex', 'jade', 'leaf', 'liquid', 'markdown', 'mdx', 'mustache', 'njk', 'nunjucks', 'php', 'razor', 'slim', 'twig', 'css', 'less', 'postcss', 'sass', 'scss', 'stylus', 'sugarss', 'javascript', 'javascriptreact', 'reason', 'rescript', 'typescript', 'typescriptreact', 'vue', 'svelte'}
 })
 
+-- don't truncate tsserver information
+require('lspconfig').tsserver.setup({
+  settings = {
+    ts = {
+      defaultMaximumTruncationLength = 1000
+    }
+  }
+})
+
 lsp.setup()

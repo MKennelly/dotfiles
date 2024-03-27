@@ -72,6 +72,8 @@ return {
 		}
 	},
 
+  {'nvim-pack/nvim-spectre', dependencies = { {'nvim-lua/plenary.nvim'} } },
+
   -- 'github/copilot.vim',
   {
     "zbirenbaum/copilot.lua",

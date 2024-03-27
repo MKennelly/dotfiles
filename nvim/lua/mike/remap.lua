@@ -88,3 +88,9 @@ map("n", "<leader>Y", '"+Y')
 
 -- Toggle listchars
 map("n", "<leader><tab>", ":set list!<cr>")
+
+-- Quickfix navigation
+map("n", "]q", ":cnext<cr>")
+map("n", "[q", ":cprev<cr>")
+map("n", "]Q", ":clast<cr>")
+map("n", "[Q", ":cfirst<cr>")

@@ -1,6 +1,6 @@
 return {
 
-	-- { 'nvim-telescope/telescope.nvim', tag = '0.1.1', dependencies = { {'nvim-lua/plenary.nvim'} } },
+  -- { 'nvim-telescope/telescope.nvim', tag = '0.1.6', dependencies = { 'nvim-lua/plenary.nvim' } },
 	{ 'ibhagwan/fzf-lua',
 	  -- optional for icon support
 	  dependencies = { 'nvim-tree/nvim-web-devicons' }

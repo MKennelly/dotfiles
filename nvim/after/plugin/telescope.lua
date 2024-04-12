@@ -1,8 +1,21 @@
+-- require('telescope').setup({
+--   defaults = { },
+-- })
 -- local builtin = require('telescope.builtin')
 --
 -- vim.keymap.set('n', '<leader>pf', builtin.git_files, {})
 -- vim.keymap.set('n', '<C-p>', function() builtin.find_files({ hidden = true }) end, {})
--- vim.keymap.set('n', '<C-g>', builtin.live_grep, {})
+-- -- vim.keymap.set('n', '<C-g>', builtin.live_grep, {})
 -- vim.keymap.set('n', '<leader>ps', function()
 -- 	builtin.grep_string({ search = vim.fn.input("Grep > ") });
 -- end)
+--
+-- function fuzzyFindFiles()
+--   builtin.grep_string({
+--     path_display = { 'smart' },
+--     only_sort_text = true,
+--     word_match = "-w",
+--     search = '',
+--   })
+-- end
+-- vim.keymap.set('n', '<C-g>', '<cmd>lua fuzzyFindFiles{}<cr>', {}) -- map whatever you want, I use ctrl-g

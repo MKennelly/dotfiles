@@ -125,4 +125,7 @@ return {
       })
     end,
   },
+
+  -- Completions/docs for vim/nvim lua functions
+  { "folke/neodev.nvim", opts = {} }
 }

@@ -99,6 +99,9 @@ echo
 echo "Creating symlink for nvim config at ~/.config/nvim"
 ln -s $HOME/dotfiles/nvim $HOME/.config/nvim
 
+echo "Adding tmux plugin manager"
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
 check_default_shell
 
 echo

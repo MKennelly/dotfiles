@@ -116,6 +116,7 @@ check_for_software rg ripgrep
 echo
 
 echo "Creating symlink for nvim config at ~/.config/nvim"
+mkdir -p $HOME/.config
 ln -s $HOME/dotfiles/nvim $HOME/.config/nvim
 
 echo "Adding tmux plugin manager"

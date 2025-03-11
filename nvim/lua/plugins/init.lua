@@ -139,5 +139,9 @@ return {
   },
 
   -- Completions/docs for vim/nvim lua functions
-  { "folke/neodev.nvim", opts = {} }
+  { "folke/neodev.nvim", opts = {} },
+  {
+    "3rd/image.nvim",
+    opts = {}
+  },
 }

@@ -13,8 +13,10 @@ return {
     dependencies = { "nvim-tree/nvim-web-devicons" },
   },
 
+  -- Color Schemes
 	'navarasu/onedark.nvim',
   { "catppuccin/nvim", as = "catppuccin" },
+  { "EdenEast/nightfox.nvim" },
 
 	{
     'nvim-treesitter/nvim-treesitter',

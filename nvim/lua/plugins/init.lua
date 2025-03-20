@@ -52,27 +52,17 @@ return {
 		config = function() require("nvim-autopairs").setup {} end
 	},
 
-	{
-		'VonHeikemen/lsp-zero.nvim',
-		branch = 'v2.x',
-		dependencies = {
-			-- LSP Support
-			{'neovim/nvim-lspconfig'},             -- Required
-			{                                      -- Optional
-				'williamboman/mason.nvim',
-				build = function()
-					pcall(function() vim.cmd 'MasonUpdate' end)
-				end,
-			},
-			{'williamboman/mason-lspconfig.nvim'}, -- Optional
+  -- LSP Support (lsp-zero no longer required)
+  {'neovim/nvim-lspconfig'},
+  -- Autocompletion
+  {'hrsh7th/nvim-cmp'},     -- Required
+  {'hrsh7th/cmp-nvim-lsp'}, -- Required
+  {'hrsh7th/cmp-nvim-lua'}, -- Required
+  -- {'L3MON4D3/LuaSnip'}, -- I think this now can be replaced with vim.snippet (v0.10+)
+  -- LSP Management
+  { 'williamboman/mason.nvim' },
+  {'williamboman/mason-lspconfig.nvim'},
 
-			-- Autocompletion
-			{'hrsh7th/nvim-cmp'},     -- Required
-			{'hrsh7th/cmp-nvim-lsp'}, -- Required
-			{'hrsh7th/cmp-nvim-lua'}, -- Required
-			{'L3MON4D3/LuaSnip'},     -- Required
-		}
-	},
 
   {'nvim-pack/nvim-spectre', dependencies = { {'nvim-lua/plenary.nvim'} } },
 

@@ -134,6 +134,9 @@ return {
   { "folke/neodev.nvim", opts = {} },
   {
     "3rd/image.nvim",
-    opts = {}
+    build = false,
+    opts = {
+      processor = "magick_cli",
+    }
   },
 }

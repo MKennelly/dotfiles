@@ -114,6 +114,8 @@ check_for_software fzf
 echo
 check_for_software rg ripgrep
 echo
+check_for_software imagemagick
+echo
 
 echo "Creating symlink for nvim config at ~/.config/nvim"
 mkdir -p $HOME/.config
